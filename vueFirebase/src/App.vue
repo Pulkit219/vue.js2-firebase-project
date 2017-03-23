@@ -48,6 +48,7 @@
                     <tr v-for="book in books">
                         <td><a v-bind:href="book.url">{{book.title}}</a></td>
                         <td>{{book.author}}</td>
+                        <td><span class="glyphicon glyphicon-trash" v-on:click="removeBook(book)"> </span></td>
                     </tr>
 
                 </tbody>
@@ -91,6 +92,19 @@ export default {
         }
       
     }
+
+  },
+  methods:{
+     addBook:function(){
+       booksRef.push(this.newBook);
+       this.newBook.title = '';
+       this.newBook.author='';
+       this.newBook.url='';
+     },
+     removeBook: function(book){
+      
+       booksRef.child(book['.key']).remove();
+     }
 
   }
 }

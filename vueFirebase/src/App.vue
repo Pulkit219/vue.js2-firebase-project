@@ -63,6 +63,7 @@
 
 <script>
 import Firebase from 'firebase'
+import toastr from 'toastr'
 
 let config = {
       apiKey: "AIzaSyAC6wRuUiAfR-Qd68jz-c4V2h6hmZ0WP8s",
@@ -104,6 +105,7 @@ export default {
      removeBook: function(book){
       
        booksRef.child(book['.key']).remove();
+       toastr.success("book removed");
      }
 
   }

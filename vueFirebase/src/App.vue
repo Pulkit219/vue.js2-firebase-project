@@ -12,19 +12,19 @@
         <div class="panel-body">
             <form id="form" class="form-inline" v-on:submit.prevent ="addBook">
               <div class="form group">
-              <label for="bookTitle">Title:</label>
+              <label for="bookTitle">Title:</label><br/>
               <input type="text" id="bookTitle" class="form-control"  v-model="newBook.title">
               </div>
 
               <div class="form group">
-              <label for="bookAuthor">Author:</label>
+              <label for="bookAuthor">Author:</label><br/>
               <input type="text" id="bookAuthor" class="form-control"  v-model="newBook.author">
               </div>
 
               <div class="form group">
-              <label for="bookUrl">Url:</label>
+              <label for="bookUrl">Url:</label><br/>
               <input type="text" id="bookUrl" class="form-control"  v-model="newBook.url">
-              </div>
+              </div><br/>
               <input type="submit" value="add book" class="btn btn-primary">
             </form>
         </div>
@@ -121,4 +121,18 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+
+.form-control{
+  
+  width:100%;
+}
+
+.form group input[type=text]{
+   width:100%;
+}
+
+#bookUrl ,#bookAuthor ,#bookTitle {
+    width: 100%;
+    }
 </style>
